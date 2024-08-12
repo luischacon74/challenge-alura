@@ -1,0 +1,179 @@
+/* Eliminar márgenes y padding predeterminados */
+:root {
+    --color-primario: #FFF;
+    --color-fondo: #333;
+    --color-border: #0c0c0c;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-fondo); /* Asegura que el fondo ocupe toda la pantalla */
+}
+
+/* Estilos para el contenedor principal */
+.container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh; /* Ajusta la altura según tus necesidades */
+    background-color: var(--color-fondo); /* Color de fondo gris oscuro */
+    color: var(--color-primario); /* Color del texto blanco para mejor contraste */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Espacio entre el textarea y el resultado */
+    padding: 20px; /* Añade padding para asegurar que el contenido no toque los bordes */
+    box-sizing: border-box; /* Incluye el padding en el tamaño total */
+}
+
+/* Estilos para el contenedor de los botones */
+.container__botones {
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en columna */
+    align-items: center; /* Alinea los elementos al centro del contenedor */
+    gap: 10px; /* Espacio entre los elementos */
+}
+
+/* Estilos para el input */
+.container__input {
+    width: 90%; /* Ajusta el ancho según tus necesidades */
+    max-width: 500px; /* Ancho máximo */
+    height: 300px; /* Ajusta la altura según tus necesidades */
+    border-radius: 8px;
+    background-color: var(--color-primario);
+    border: 25px solid transparent; /* Ajusta el ancho del borde según tus necesidades */
+    color: var(--color-border);
+    padding: 10px; /* Ajusta el padding según tus necesidades */
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 20px; /* Espacio debajo del input */
+    box-sizing: border-box; /* Asegura que el padding se incluya en el tamaño total */
+    line-height: 1.5; /* Ajusta la altura de línea para el texto */
+    overflow-y: auto; /* Permite el desplazamiento vertical si el texto es demasiado largo */
+    resize: none; /* Evita que el usuario cambie el tamaño del textarea */
+    border-image: url('../assets/fondo-marco-tecnologico.jpg') 30 round; /* Ruta a tu imagen y configuración del borde */
+    position: relative; /* Asegura que los botones se posicionen correctamente */
+}
+
+/* Contenedor para los botones */
+.container__botones-row {
+    display: flex;
+    flex-direction: column;
+    gap: 24px; /* Espacio entre los botones */
+}
+
+/* Estilos para los botones */
+.container__boton {
+    border-radius: 8px;
+    background: var(--color-primario);
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 700;
+    border: 1px solid var(--color-border);
+    cursor: pointer;
+    width: 90%; /* Ancho de los botones */
+    max-width: 328px; /* Ancho máximo */
+    height: 67px;
+    font-family: 'Inter'; /* Especifica el tipo de letra */
+}
+
+.texto__parrafo {
+    font-size: 32px;
+    font-weight: 400;
+    text-align: center; /* Centra el texto */
+}
+
+.container__texto {
+    margin: 16px 0 16px 0;
+    text-align: center; /* Centra el texto */
+    width: 90%; /* Ajusta el ancho según tus necesidades */
+    max-width: 500px; /* Ancho máximo */
+}
+
+/* Contenedor para el textarea y el resultado */
+.container__input-resultado {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Espacio entre el textarea y el resultado */
+    position: relative;
+    align-items: center;
+    justify-content: center; /* Alinea verticalmente los elementos */
+}
+
+/* Estilos para el contenedor del resultado */
+.container__resultado {
+    width: 90%; /* Ajusta el ancho según tus necesidades */
+    max-width: 500px; /* Ancho máximo */
+    height: 300px; /* Ajusta la altura según tus necesidades */
+    border-radius: 8px;
+    background-color: var(--color-primario);
+    border: 25px solid transparent; /* Ajusta el ancho del borde según tus necesidades */
+    color: var(--color-border);
+    padding: 10px; /* Ajusta el padding según tus necesidades */
+    font-size: 16px;
+    font-weight: 400;
+    box-sizing: border-box; /* Asegura que el padding se incluya en el tamaño total */
+    line-height: 1.5; /* Ajusta la altura de línea para el texto */
+    overflow-y: auto; /* Permite el desplazamiento vertical si el texto es demasiado largo */
+    border-image: url('../assets/fondo-marco-tecnologico.jpg') 30 round; /* Ruta a tu imagen y configuración del borde */
+    position: relative; /* Asegura que los botones se posicionen correctamente */
+    margin-bottom: 20px;
+}
+
+/* Estilos para los botones pequeños */
+.small-button {
+    position: absolute;
+    padding: 5px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    z-index: 10; /* Asegura que los botones estén al frente */
+    background-color: var(--color-primario); /* Fondo blanco para mejor visibilidad */
+    border: 1px solid var(--color-border); /* Borde para mejor visibilidad */
+}
+
+.pegar-button {
+    top: 10px;
+    left: 10px;
+}
+
+.copiar-button {
+    bottom: 10px;
+    right: 10px;
+}
+
+.warning-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Media Queries para diferentes tamaños de pantalla */
+@media (min-width: 600px) {
+    .container__input-resultado {
+        flex-direction: row;
+    }
+
+    .container__botones-row {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 900px) {
+    .container__input, .container__resultado {
+        width: 45%;
+    }
+
+    .container__boton {
+        width: 45%;
+    }
+}
+
+/* Ajustes específicos para pantallas pequeñas */
+@media (max-width: 599px) {
+    .container__texto {
+        margin-top: 20px; /* Añade margen superior para asegurar visibilidad */
+    }
+}
